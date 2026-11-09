@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@rvfitness.in",
+      "password": "admin123",
+      "name": "Administrator",
+      "role": "admin",
+      "related_id": null,
+      "phone": "+91 98230 12345",
+      "status": "Active",
+      "created_at": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 1794038943670,
+      "email": "shindeshweta1805@gmail.com",
+      "password": "shweta18!!",
+      "name": "Shweta Rajaram Shinde",
+      "role": "member",
+      "related_id": "RVF-0001",
+      "phone": "9699927118",
+      "status": "Active",
+      "created_at": "2026-11-07T08:09:03.669Z"
+    }
+  ],
+  "members": [
+    {
+      "id": 1794038943669,
+      "member_id": "RVF-0001",
+      "full_name": "Shweta Rajaram Shinde",
+      "email": "shindeshweta1805@gmail.com",
+      "phone": "9699927118",
+      "date_of_birth": "",
+      "gender": "Male",
+      "address": "Narsobawadi, Maharashtra",
+      "emergency_contact": "",
+      "registration_date": "2026-11-07",
+      "status": "Active",
+      "assigned_trainer_id": null,
+      "created_at": "2026-11-07T08:09:03.669Z"
+    }
+  ],
+  "trainers": [],
+  "membership_plans": [],
+  "member_memberships": [],
+  "payments": [],
+  "attendance": [],
+  "workout_plans": [],
+  "diet_plans": [],
+  "progress_records": [],
+  "notifications": [
+    {
+      "id": 1794038943671,
+      "title": "New Member Online Registration",
+      "message": "Shweta Rajaram Shinde registered online (RVF-0001).",
+      "type": "member",
+      "target_role": "admin",
+      "target_id": null,
+      "read_status": false,
+      "created_at": "2026-11-07T08:09:03.669Z"
+    }
+  ],
+  "gym_settings": {
+    "gym_name": "RV FITNESS",
+    "tagline": "The Ultimate Fitness & Strength Center",
+    "address": "Near Datta Mandir, Narsobawadi, Tal. Shirol, Dist. Kolhapur, Maharashtra 416104, India",
+    "phone": "+91 98230 12345 / +91 94220 54321",
+    "email": "contact@rvfitnessnarsobawadi.in",
+    "currency": "₹",
+    "opening_hours": "Mon-Sat: 5:30 AM - 10:00 PM | Sun: 6:00 AM - 1:00 PM",
+    "admin_name": "Gym Administrator",
+    "admin_email": "admin@rvfitness.in"
+  }
+}

@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+
+  /* ─── Global Input / Textarea / Select visibility enforcement ─── */
+  /* Default for all standard inputs (light background contexts) */
+  input,
+  textarea,
+  select {
+    color: #0f172a !important; /* slate-900: high contrast */
+    caret-color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+  }
+
+  /* When an input is disabled or readonly */
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    color: #475569 !important; /* slate-600 */
+    -webkit-text-fill-color: #475569 !important;
+    background-color: #f1f5f9 !important; /* slate-100 */
+    cursor: not-allowed;
+    opacity: 0.85 !important;
+  }
+
+  /* Distinct, readable placeholder styling */
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8 !important; /* slate-400 */
+    -webkit-text-fill-color: #94a3b8 !important;
+    opacity: 1 !important;
+  }
+
+  /* Dark-themed inputs (Login, Register, Contact, dark panels) */
+  input.text-white,
+  textarea.text-white,
+  select.text-white,
+  .dark-input,
+  [data-theme="dark"] input,
+  [data-theme="dark"] textarea,
+  [data-theme="dark"] select,
+  input[class*="bg-slate-900"],
+  textarea[class*="bg-slate-900"],
+  select[class*="bg-slate-900"],
+  input[class*="bg-charcoal"],
+  textarea[class*="bg-charcoal"],
+  select[class*="bg-charcoal"],
+  input[class*="bg-[#121620]"],
+  textarea[class*="bg-[#121620]"],
+  select[class*="bg-[#121620]"],
+  input[class*="bg-[#0B0E14]"],
+  textarea[class*="bg-[#0B0E14]"] {
+    color: #ffffff !important;
+    caret-color: #10B981 !important; /* Emerald accent caret */
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  input[class*="bg-slate-900"]::placeholder,
+  textarea[class*="bg-slate-900"]::placeholder,
+  input[class*="bg-[#121620]"]::placeholder,
+  textarea[class*="bg-[#121620]"]::placeholder,
+  input.text-white::placeholder,
+  textarea.text-white::placeholder {
+    color: #64748b !important; /* slate-500: visible but distinct from white text */
+    -webkit-text-fill-color: #64748b !important;
+  }
+
+  /* Password field masking preservation */
+  input[type="password"] {
+    font-family: caption, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: 0.15em;
+  }
+
+  /* Browser autofill handling for light inputs */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #0f172a !important;
+    caret-color: #0f172a !important;
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    box-shadow: 0 0 0 1000px #ffffff inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Browser autofill handling for dark inputs */
+  input[class*="bg-slate-900"]:-webkit-autofill,
+  input[class*="bg-slate-900"]:-webkit-autofill:hover,
+  input[class*="bg-slate-900"]:-webkit-autofill:focus,
+  input[class*="bg-[#121620]"]:-webkit-autofill,
+  input[class*="bg-[#121620]"]:-webkit-autofill:hover,
+  input[class*="bg-[#121620]"]:-webkit-autofill:focus,
+  input.text-white:-webkit-autofill,
+  input.text-white:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #10B981 !important;
+    -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
+    box-shadow: 0 0 0 1000px #0f172a inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark sidebar custom scrollbars */
+.dark-sidebar::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-invoice, #printable-invoice * {
+    visibility: visible;
+  }
+  #printable-invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white;
+  }
+}
